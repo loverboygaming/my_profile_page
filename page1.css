@@ -1,0 +1,214 @@
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navigation{
+  background-color: blue;
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:50%;
+  border: 0.5px solid deeppink;
+}
+.logo{
+  font-size:35px;
+  margin: 20px;
+  font-family: serif;
+  font-weight: bold;
+ margin-left:100px;
+}
+.hide{
+ display:none;
+text-align:right;
+background-color: darkred;
+border: 3px solid red;
+  
+}
+ol li a{
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+ol li{
+  list-style-type: none;
+}
+ol.drop{
+    display: flex;
+}
+ol li{
+   justify-content: space-between;
+   font-size: 20px;
+   padding:10px;
+   height: 20%;
+   width:100px;
+   text-align: center;
+}
+ol li:hover{
+    background-color: red;
+ }
+i.toggle{
+  position: absolute;
+  right: 5%;
+  top:17px;
+  display: none;
+  width: 50px;
+  font-size: 25px;
+}
+@media(max-width:500px){
+    
+  .logo{
+    font-size:24px;
+    margin-left: 80px;
+  }
+  .log_in{
+    border-bottom-left-radius:10px;
+  }
+ 
+  
+  i.toggle{
+    display: block;
+    color:white;
+  }
+  ol.drop{
+    flex-direction: column;
+    width:50%;
+    position: absolute;
+    right: 0px;
+    border-left: 5px solid darkgrey;
+    border-bottom:3px solid darkgray;
+    border-bottom-left-radius: 10px;
+  }
+  ol.drop li{
+    display:none;
+    width:100%;
+  }
+  ol.drop li a{
+    color:white;
+    font-weight: bold;
+    font-family: serif,arial,times;
+  }
+  ol.drop li.muni{
+    border-bottom-left-radius: 8px;
+  }
+  .navigation{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+    .main .list ol#drop.active li:hover {
+      background-color: red;
+      border-color: red;
+    }
+  .main .list:hover ol#drop.active li{
+    display:block;
+   background-image:linear-gradient(145deg,rgba(0,0,255,0.6) 99%,white);
+    text-align: center;
+    padding-up: 10px;
+    border: 1px solid darkgray;
+  }
+    .hide{
+    display :block;
+  }
+  th{
+  font-size: 20px;
+  margin-left:6px;
+  margin: 20px;
+  height :60px;
+  align-items: center;
+  text-align: left;
+}
+td{
+  height: 45px;
+  font-size: 14px;
+  text-align: left;
+  padding-left: 10px;
+}
+table ul{
+  padding-left: 45px;
+  padding-top: 7px;
+  list-style:none;
+}
+table ul li{
+  padding: 4px;
+}
+}
+html{
+  background-image:linear-gradient(white,rgba(255,51,255,0.4),white);
+  background-size: 100%;
+}
+.circle{
+  height:50px;
+  width:50px;
+  background-image:url(myphoto.jpg);
+  background-size:115%;
+  border-radius: 50%;
+  position: absolute;
+  left: 14px;
+  top:10px;
+  border: 3px inset coral;
+}
+.footer{
+  position: absolute ;
+  bottom: 0px;
+  background-color:silver;
+  width: 100%;
+  height:20px;
+  padding-top: 10px;
+  align-items: center;
+  font-size: 15px;
+  padding-bottom: 20px;
+  color:red;
+}
+img{
+  border-radius: 20px;
+  border: 8px inset coral;
+}
+@media(min-width:500px) {
+  th{
+  font-size: 50px;
+  margin-left:6px;
+  margin: 20px;
+  height :60px;
+  align-items: center;
+  text-align: left;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+td{
+  height: 65px;
+  font-size: 35px;
+  text-align: left;
+  padding-left: 40px;
+  padding-bottom: 55px;
+}
+table ul{
+  padding-left: 90px;
+  padding-top: 30px;
+  list-style:none;
+}
+table ul li{
+  padding:10px;
+}
+.phocol{
+  height: 460px;
+  padding-left: 50px;
+}
+.footer{
+  position: absolute ;
+  bottom: 60px;
+  background-color:silver;
+  width: 100%;
+  height:80px;
+  padding-top: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 44px;
+  color:darkred;
+}
+.marquee{
+  margin:40px;
+  width:80%;
+  font-size: 40px;
+}
+}
