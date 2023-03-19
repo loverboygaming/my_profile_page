@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <style>
+  html{
+    background-color: aqua;
+  }
   table{
     width:100%;
     height: 100px;
@@ -31,6 +34,33 @@
       align-items: center;
       background-color:black;
     }
+    div.timedate{
+      display: flex;
+      width:cover;
+      padding-top: 8%;
+      padding-bottom: 5%;
+      background-color:fuchsia ;
+      align-items: center;
+      color:navy;
+      border-radius: 10px;
+      }
+    div.time{
+      position: absolute;
+      top:20px;
+      right:20px;
+      font-size: 20px;
+      font-style: serif;
+      font-weight:500;
+      background-color:fuchsia;
+    }
+    div.date{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+      font-style: serif;
+      font-weight:500;
+      }
     @media(min-width:400px){
       input{
         padding: 30px;
@@ -55,6 +85,33 @@
 </head>
 
 <body>
+  <div class="timedate">
+    <div class="date" id="date"> </div>
+    <script>
+      function atDate() {
+        var today = new Date();
+        var date = today.getDate();
+        var month = today.getMonth();
+        var year = today.getFullYear();
+        document.getElementById("date").innerHTML = "Date : " + date + " / " + (month + 1) + " / " + year;
+      }
+     atDate();
+    </script>
+    <div class="time" id="time">  </div>
+    <script>
+          function getTime(){
+            var a=new Date();
+            var e=a.getHours();
+            var f=a.getMinutes();
+            var g=a.getSeconds();
+            document.getElementById("time") .innerHTML="Time : "+e+" : "+f+" : "+g;
+            setInterval("getTime()",1000);
+       }
+       getTime();
+    </script>
+    
+    </div>
+    <br><br>
   <h1>Click buttons of below to show the cube of that number</h1><br>
 
   <table>
@@ -107,5 +164,5 @@
 </div>
 
 </body>
-
+ 
 </html>
