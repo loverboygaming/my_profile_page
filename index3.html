@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+     <marquee id="namemuni"></marquee>
+  <style>
+  form{
+    align-items: center;
+    padding: 8px;
+    background-color: pin;
+    overflow: scroll;
+    position: absolute;
+    left: 50px;
+    top:115px;
+  }
+  marquee{
+    color: white;
+  }
+  html{
+    background-image:url(mobilescreen.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  input.textarea{
+    width:78%;
+    font-size: 30px;
+    padding-left: 20px;
+    background-color: lightseagreen;
+    color:white;
+  }
+  .clear{
+    background-color: red;
+    color: antiquewhite;
+    width: 85%;
+    font-size: 30px;
+  }
+  .equal{
+      width: 85%;
+      font-size: 30px;
+      color: white;
+      background-color: green;
+  }
+    input
+    {
+      width:18%;
+      height:50px;
+      margin:5px;
+      font-size: 25px;
+      font-family:serif;
+      border-radius:9px;
+    }
+  </style>
+</head>
+
+<body>
+  <script></script>
+  <form name="form"action="#">
+    <input type="text" name="answer" class="textarea"<br>
+    
+    
+    <input type="button" value="1" onclick="form.answer.value+='1'">
+    <input type="button" value="2" onclick="form.answer.value+='2'">
+     <input type="button" value="3" onclick="form.answer.value+='3'">
+   <input type="button" value="+" onclick="form.answer.value+='+'"><br>
+   
+    <input type="button" value="4" onclick="form.answer.value+='4'">
+    <input type="button" value="5" onclick="form.answer.value+='5'">
+     <input type="button" value="6" onclick="form.answer.value+='6'">
+   <input type="button" value="-" onclick="form.answer.value+='-'"><br>
+   
+    <input type="button" value="7" onclick="form.answer.value+='7'">
+    <input type="button" value="8" onclick="form.answer.value+='8'">
+     <input type="button" value="9" onclick="form.answer.value+='9'">
+   <input type="button" value="*" onclick="form.answer.value+='*'"><br>
+   
+     <input type="button" value="%" onclick="form.answer.value+='%'">
+     <input type="button" value="0" onclick="form.answer.value+='0'">
+   <input type="button" value="." onclick="form.answer.value+='.'">
+     <input type="button" value="/" onclick="form.answer.value+='/'"><br>
+     
+     <input type="button" value="(" onclick="form.answer.value+='('">
+     <input type="button" value="," onclick="form.answer.value+=','">
+     <input type="button" value=")" onclick="form.answer.value+=')'">
+       <input type="button" value="=" onclick="form.answer.value=eval(form.answer.value)">
+       <br>
+     
+     <input type="button"value="^2" onclick="form.answer.value=Math.pow(form.answer.value,2)">
+     <input type="button"value="^3" onclick="form.answer.value=Math.pow(form.answer.value,3)">
+  <input type="button"value="2√" onclick="form.answer.value=Math.sqrt(form.answer.value)">   
+  <input type="button"value="3√" onclick="form.answer.value=Math.cbrt(form.answer.value)">   <br>
+  
+     
+   <input type="button" value="Equal" onclick="form.answer.value=eval(form.answer.value)"class="equal"><br>
+   <input type="button" value="clear" onclick="form.answer.value=' '"class="clear">
+   <script>
+   function develop(){
+     var x=document.getElementById('')
+     document.getElementById('namemuni').innerHTML="MUNI KUMAR RAJA REDDY developed these website";
+   }
+   develop();
+   </script>
+  </form>
+</body>
+
+</html>
