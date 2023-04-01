@@ -134,6 +134,20 @@ ul#shape.active li:nth-child(7) .letter{
     border: 5px solid black;
     background: 10px solid black;
 }
+ul#shape li:nth-child(8) .back{
+  opacity: 0%;
+}
+  
+ul#shape.active li:nth-child(8) .back{
+  position: absolute;
+  left: 0px;
+  opacity: 100%;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
 .text{
   color: white;
   font-size: 20px;
@@ -178,6 +192,7 @@ ul#shape.active li:nth-child(7) .letter{
     <li><div class="message" id="message"></div></li>
     <li><div class="messagecover"></div></li>
     <li><div class="letter"><p>April fool</p></div></li>
+ <li> <marquee class="back" width="100%">Muni Kumar Raja Reddy create these page</marquee></li>
      </ul>
       <button id="btn" onclick="toggleMenu()">Open <br>Message</button>
      <script>
