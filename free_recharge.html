@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <style>
+  html{
+    background-color: deepskyblue;
+  }
+  div.rectangle{
+    position: absolute;
+    top:150px;
+    left: 1%;
+    background-color: black;
+    padding-left:49%;
+    padding-right:49%;
+    padding-top:26%;
+    padding-bottom: 30%;
+    background: 10px solid black;
+  }
+div.letter p{
+    position: absolute;
+    top:10%;
+    left:50px;
+    font-weight: bold;
+    font-size: 30px;
+    color:red;
+    font-family: serif;
+}
+div.text {
+  position: absolute;
+  top: 14%;
+  left: 15%;
+  display: block;
+  font-size: 20px;
+}
+  ul{
+    list-style: none;
+  }
+ul#shape li{
+  
+  margin: 5px 0;
+ transition: 0.5s all cubic-bezier(1, 0, 0, 1);
+}
+ul#menu li{
+  background-color:blue;
+  display:block;
+  padding:8px 10px;
+  font-weight: 500;
+  color:white;
+  text-decoration:none;
+  text-align: center;
+}
+ul#shape div.up{
+  position: absolute;
+  left:5px ;
+  top: 190px;
+  width: 0px;
+  border-left: 190px solid transparent;
+  border-right: 190px solid transparent;
+  border-top: 100px solid white;
+  margin: 3px;
+  opacity:100;
+  transform: translateY(0.5s);
+}
+ul#shape div.down{
+  position: absolute ;
+  top: 35%;
+  left:5px;
+  width:0px;
+  border-left: 190px solid transparent;
+  border-right: 190px solid transparent;
+  border-bottom: 100px solid white;
+}
+ul#shape div.left{
+  position: absolute;
+  top: 21%;
+  left: 5px;
+  width: 0px;
+  border-top: 103px solid transparent;
+  border-bottom: 103px solid transparent;
+  border-left: 190px solid white;
+}
+ul#shape div.right{
+  position: absolute;
+  top: 21%;
+  right:5px;
+  width: 0px;
+  border-bottom: 103px solid transparent;
+  border-right: 190px solid white;
+  border-top: 103px solid transparent;
+}
+ul#shape li:nth-child(1) .up{
+  transform: translateY(-40px);
+}
+ul#shape.active li:nth-child(1) .up{
+    transform: translateX(0px);
+    opacity: 0%;
+}
+ul#shape.active li:nth-child(5) .message{
+    position: absolute;
+    top: 38px;
+    left:5px;
+    width:0px;
+    border-left: 195px solid transparent;
+    border-right: 195px solid transparent;
+    border-bottom: 110px solid white;
+}
+ul#shape.active li:nth-child(6) .messagecover{
+    position: absolute;
+    top: 50px;
+    left:5px;
+    width:0px;
+    border-left: 195px solid transparent;
+    border-right: 195px solid transparent;
+    border-bottom: 100px solid black;
+}
+ul#shape li:nth-child(7) .letter{
+  opacity: 0%;
+}
+ul#shape.active li:nth-child(7) .letter{
+   opacity:100%;
+    position: absolute;
+    top:150px;
+    left: 20%;
+    background-color:white;
+    padding-left:20%;
+    padding-right:40%;
+    padding-top:;
+    padding-bottom: 30%;
+    border: 5px solid black;
+    background: 10px solid black;
+}
+.text{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 40px;
+}
+  button {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    border-radius: 50%;
+    background-color: orangered;
+    color:white;
+    padding: 20px;
+    font-weight: 900;
+    font-family: serif;
+  }
+  </style>
+    <script>
+    function toggleMenu(){
+      let menu=document.getElementById('shape');
+      menu.classList.toggle('active');
+      
+    }
+    </script>
+</head>
+
+<body>
+  <div class="rectangle">
+    
+  </div>
+  
+  <div class="text"><p id="text">Click open to get free recharge</p></div>
+      <ul id="shape">
+ <li><div class="up"></div></li>
+   <li><div class="down"></div></li>
+   <li><div class="left"></div></li>
+     <li><div class="right"></div></li>
+    <li><div class="message" id="message"></div></li>
+    <li><div class="messagecover"></div></li>
+    <li><div class="letter"><p>April fool</p></div></li>
+     </ul>
+      <button id="btn" onclick="toggleMenu()">Open <br>Message</button>
+     <script>
+       const btn = document.getElementById('btn');
+     
+       btn.addEventListener('click', () => {
+         // 👇️ hide button
+         btn.style.display = 'none';
+     
+         // 👇️ show div
+         const box = document.getElementById('box');
+         box.style.display = 'block';
+         html.style.bgcolor='red';
+        const text=document.getElementById('text');
+        text.style.display='none';
+       });
+  
+       
+     </script>
+</body>
+</html>
