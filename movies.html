@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>muni_rebal</title>
+  <style>
+  body{
+    background-color:white;
+  }
+.violet{
+      width: 120px;
+      height: 30px;
+      background-color:violet;
+      border: 5px solid white;
+      color:white;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.indigo{
+      width: 120px;
+      height: 30px;
+      background-color:indigo;
+      border: 5px solid white;
+      color:white;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.blue{
+      width: 120px;
+      height: 30px;
+      background-color:blue;
+      border: 5px solid white;
+      color:white;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.green{
+      width: 120px;
+      height: 30px;
+      background-color:green;
+      border: 5px solid white;
+      color:white;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.yellow{
+      width: 120px;
+      height: 30px;
+      background-color:yellow;
+      border: 5px solid white;
+      color:grey;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.orange{
+      width: 120px;
+      height: 30px;
+      background-color:orange;
+      border: 5px solid white;
+      color:white;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.red{
+      width: 120px;
+      height: 30px;
+      background-color:red;
+      border: 5px solid white;
+      color:white;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.white{
+      width: 120px;
+      height: 30px;
+      background-color:white;
+      border: 5px solid white;
+      color:black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.dark{
+      width: 120px;
+      height: 30px;
+      background-color:black;
+      border: 5px solid white;
+      color:white;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: serif;
+      text-align: center;
+      padding-top: 10px;
+    }
+.colors{
+  position: absolute ;
+  left: 8px;
+  top:102px;
+  border: 3px solid black;
+  width: 130px;
+  display:none;
+  opacity: 0;
+  transform: translate(-150px,-15px);
+  transition:1s;
+  border-bottom-right-radius: 10px;
+}
+.colors1{
+  position: absolute ;
+  left: 8px;
+  top:102px;
+  transform: translate(-150px,-15px);
+  border: 3px solid black;
+  width: 130px;
+  opacity: 0;
+  display:none;
+  transition:1s;
+  border-bottom-right-radius: 10px;
+}
+.colors2{
+  position: absolute;
+  left: 8px;
+  top:102px;
+  transform: translate(0px,-15px);
+  border: 3px solid black;
+  width: 130px;
+  opacity:0;
+  display: none;
+  transition:1s;
+  border-bottom-right-radius: 10px;
+}
+.size{
+  position: absolute ;
+  left: 8px;
+  top:102px;
+  background-color: white;
+  border-radius:10px;
+  width: 300px;
+  display: none;
+  transition:1s;
+  transform: translate(0px,-445px);
+}
+button{
+  width: 120px;
+  height: 50px;
+  padding: 10px;
+  font-family: serif;
+  font-weight: bold;
+  margin: 5px;
+  border: 3px solid grey;
+  transform: translateX(-40px);
+  border-radius: 10px;
+}
+#buttons{
+  position: absolute;
+  top: -13px;
+  left:45px;
+  width:75%;
+  display: flex;
+  background-color: cadetblue;
+  border: 5px solid black;
+  overflow: scroll;
+  transform: translate(-950px,0px);
+  transition: 2s;
+}
+li{
+  list-style: none;
+}
+#settingopen{
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  padding:10px;
+  align-items: center;
+  background-color:rgba(240,240,240,0.5);
+  border: 1px solid grey;
+  border-radius: 10px;
+  font-size: 29px;
+  opacity: 50%;
+}
+#settingclose{
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  padding:10px;
+  display: none;
+  align-items: center;
+  background-color:rgba(240,240,240,0.5);
+  border: 1px solid grey;
+  border-radius: 10px;
+  font-size: 22px;
+  opacity: 50%;
+}
+#settingiconopen{
+  transform: translate(-7px,-7px);
+  display:block;
+  font-size:29px;
+  opacity:100%;
+}
+#settingiconclose{
+  transform: translate(-6px,-21px);
+  font-size: 40px;
+  color: orangered;
+  opacity:0%;
+  display: none;
+}
+.textfield{
+  
+}
+#btnback{
+  display: none;
+}
+#headings{
+  font-size: 30px;
+  font-weight: bold;
+}
+#hsize{
+  position: absolute;
+  left:0px;
+  top:95px;
+  width: 131px;
+  height: 603px;
+  transition:1s;
+  opacity: 0;
+  display: none;
+  transform: translate(-198px,-7px);
+  border-bottom-right-radius: 10px;
+  background-color: black;
+}
+#headform input {
+  width: 128px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  background-color: white;
+  border: 2px solid black;
+  transition: 1s;
+}
+.text15 {
+  border-bottom-right-radius: 10px;
+}
+#fweight{
+  position: absolute;
+  left:0px;
+  top:95px;
+  width: 131px;
+  height: 163px;
+  transition:1s;
+  opacity: 0;
+  display: none;
+  transform: translate();
+  border-bottom-right-radius: 10px;
+  background-color: black;
+}
+#fweight input{
+  width: 128px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  background-color: white;
+  border: 2px solid black;
+  transition: 1s;
+}
+#bold{
+  border-bottom-right-radius: 10px;
+}
+#para{
+  font-family:serif;
+  font-style: italic;
+  font-size: 15px;
+}
+#num{
+  width: 150px;
+  border-radius: 20px;
+}
+#sizebtn{
+  width: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+#morebodycolor,#moretextcolor,#moreheadcolor{
+position: absolute; 
+bottom:2px;
+left: 1px;
+ width: 35px;
+ height: 35px;
+ border: 1px solid white;
+ margin: 2px;
+ padding: 0px;
+}
+label[for="morebodycolor"],label[for="moretextcolor"],label[for="moreheadcolor"]{
+  position: absolute;
+  bottom:7px;
+  right: 16px;
+} 
+#textmore,#bodymore,#headmore{
+  height: 40px;
+  color: dimgrey;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: serif;
+  text-align: center;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}td
+table{
+  position: absolute;
+  top: 400px;
+  left:80px;
+  }
+td{
+  width: 180px;
+  height: 180px;
+  border: 1px solid red;
+  border-radius: 10px;
+  background-color: white;
+  width: 140px;
+  height: 140px;
+}
+img{
+  
+  width:180px;
+  height: 180px;
+  border-radius: 10px;
+}
+  </style>
+</head>
+
+<body id="body">
+<div class="bgcolorchange">
+ <!--menu buttons-->
+<ol id="buttons">
+  <li>  
+    <button type="button" id="btn" >Background colours</button>
+  </li>
+  <li>  
+    <button type="button" id="btn2">Font colours</button>
+  </li>
+  <li>  
+    <button type="button" id="btn3">Heading colours</button>
+  </li>
+  <li>  
+    <button type="button" id="btn4">Font size</button>
+  </li>
+  <li>  
+    <button type="button" id="btn5">Head size</button>
+  </li>
+  <li>  
+    <button type="button" id="btn6">Font thickness</button>
+  </li>
+  <li>
+    <button type="button" id="btnback">Close</button>
+  </li>
+</ol>
+
+<div class="colors" id="colors">
+  <div class="violet" id="vio" onclick="bodybg1()">Violet</div>
+  <div class="indigo" id="ind" onclick="bodybg2()">Indigo</div>
+  <div class="blue" id="blu" onclick="bodybg3()">Blue</div>
+  <div class="green" id="gre" onclick="bodybg4()">Green</div>
+  <div class="yellow" id="yel" onclick="bodybg5()">Yellow</div>
+  <div class="orange" id="ora" onclick="bodybg6()">Orange</div>
+  <div class="red" id="red" onclick="bodybg7()">Red</div>
+  <div class="white" id="whi" onclick="bodybg8()">white</div>
+  <div class="dark" id="dark" onclick="bodybg9()">black</div>
+  <div class="bodymore" id="bodymore">
+     <input type="color" name="morebodycolor"id="morebodycolor">
+      <label for="morebodycolor">More</label>
+  </div>
+  </div>
+  
+<div class="size" id="size">
+  <form action="#" id="form"name="form">
+    <span id="txtsizedisplay">present the size of the text is 15px</span>
+    <input type="number" id="num" name="num">
+   <br> <input type="button" id="sizebtn" value="➱" onclick="textsize12()">
+  </form>
+</div>
+
+<div class="colors1" id="colors1">
+    <div class="violet" id="vio" onclick="textbg1()">Violet</div>
+    <div class="indigo" id="ind" onclick="textbg2()">Indigo</div>
+    <div class="blue" id="blu" onclick="textbg3()">Blue</div>
+    <div class="green" id="gre" onclick="textbg4()">Green</div>
+    <div class="yellow" id="yel" onclick="textbg5()">Yellow</div>
+    <div class="orange" id="ora" onclick="textbg6()">Orange</div>
+    <div class="red" id="red" onclick="textbg7()">Red</div>
+    <div class="white" id="whi" onclick="textbg8()">white</div>
+    <div class="dark" id="dark" onclick="textbg9()">black</div>
+    <div class="textmore" id="textmore">
+      <input type="color" name="moretextcolor" id="moretextcolor">
+     <label for="moretextcolor">More</label>
+   
+    </div>
+  </div>
+  
+<div class="colors2" id="colors2">
+    <div class="violet" id="vio" onclick="headbg1()">Violet</div>
+    <div class="indigo" id="ind" onclick="headbg2()">Indigo</div>
+    <div class="blue" id="blu" onclick="headbg3()">Blue</div>
+    <div class="green" id="gre" onclick="headbg4()">Green</div>
+    <div class="yellow" id="yel" onclick="headbg5()">Yellow</div>
+    <div class="orange" id="ora" onclick="headbg6()">Orange</div>
+    <div class="red" id="red" onclick="headbg7()">Red</div>
+    <div class="white" id="whi" onclick="headbg8()">white</div>
+    <div class="dark" id="dark" onclick="headbg9()">black</div>
+      <div class="headmore" id="headmore">
+     <input type="color" name="moreheadcolor"id="moreheadcolor">
+      <label for="moreheadcolor">More</label>
+  </div>
+  </div>
+  
+<div class="headsize" id="hsize">
+ <form action="#" name="headform" id="headform"> 
+ <input type="button" value="1" onclick="textsize1(1)">
+ <input type="button"  value="2" onclick="textsize1(2)">
+ <input type="button" value="3" onclick="textsize1(3)">
+ <input type="button" value="4" onclick="textsize1(4)">
+ <input type="button" value="5" onclick="textsize1(5)">
+ <input type="button" value="6" onclick="textsize1(6)">
+ <input type="button" value="7" onclick="textsize1(7)">
+ <input type="button" value="8" onclick="textsize1(8)">
+ <input type="button" value="9" onclick="textsize1(9)">
+<input type="button" value="10" onclick="textsize1(10)">
+<input type="button" value="11" onclick="textsize1(11)">
+<input type="button" value="12" onclick="textsize1(12)">
+<input type="button" value="13" onclick="textsize1(13)">
+<input type="button" value="14" onclick="textsize1(14)">
+<input type="button" class="text15"value="15" onclick="textsize1(15)">
+  </form>
+</div>
+
+<div class="fweight" id="fweight">
+<form action="#" name="fontweight" id="fontweight"> 
+ <input type="button" value="1" onclick="fontweight1(500)">
+ <input type="button"  value="2" onclick="fontweight1(550)">
+<input type="button" value="3" onclick="fontweight1(1000)">
+<input type="button" value="Bold" id="bold" onclick="fontweight2()">
+  </form>
+</div>
+
+<div id="settingopen" >
+  <span id="settingiconopen">⚙️</span>
+</div>
+<div id="settingclose">
+  <span id="settingiconclose">✘</span>
+</div>
+</div>
+<!--text area-->
+<div class="textfield" id="text">
+  <div class="paragraph1" id="">
+    <div id="headings" class="headings">
+      <br><br>
+      Owner of these page:
+    </div>
+    <div id="para"><br>
+      ANGEREDDY MUNI KUMAR RAJA REDDY<br><br>
+      Thank you for visiting my page
+      <br><br>
+    </div>
+  </div>
+</div>
+<div id="moviesdivtag">
+    <table>
+      <tr>
+        <td>
+          <a href="https://s.imoim.net/Xlh7z2?ISCI=001102"><img src="ravanasura.jpg"></a>
+        </td>
+        <td>
+          <a href="https://s.imoim.net/5n7j4n?ISCI=001102"><img src="sindhooram.jpg"></a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://s.imoim.net/4pQcj8?ISCI=001102"><img src="possession.jpg" ></a></td>
+        <td><a href="https://s.imoim.net/MIKPKS?ISCI=001102"><img src="vidudhala.jpg" ></a></td>
+      </tr>
+    </table>
+</div>
+<!--script for settings-->
+<script>
+  var settingopen = document.getElementById('settingopen');
+  var settingclose = document.getElementById('settingclose');
+  var settingiconclose = document.getElementById('settingiconclose');
+  var settingiconopen = document.getElementById('settingiconopen');
+  var c = document.getElementById('buttons');
+  
+  settingopen.addEventListener('click',() =>{
+  c.style.opacity='100';
+  c.style.transform='translate(0px,0px)';
+  c.style.display='flex';
+  settingiconopen.style.display='none';
+  settingiconopen.style.opacity='0%';
+  settingiconclose.style.display='block';
+  settingiconclose.style.opacity='100%';
+  settingclose.style.display='block';
+  settingopen.style.display='none';
+  });
+  
+settingclose.addEventListener('click',() => {
+  c.style.opacity='0%';
+  c.style.transform='translate(-800px,0px)';
+  c.style.display='none';
+  settingiconopen.style.display='block';
+  settingiconopen.style.opacity='100%';
+  settingiconclose.style.display='none';
+  settingiconclose.style.opacity='0%';
+  settingclose.style.display='none';
+  settingopen.style.display='block';
+  document.getElementById('btnback').click();
+});
+</script>
+<!--script for background colors-->
+<script>
+  function bodybg1(){
+    document.body.style.backgroundColor="violet";
+  }
+  function bodybg2(){
+    document.body.style.backgroundColor="indigo";
+  }
+  function bodybg3(){
+    document.body.style.backgroundColor="blue";
+  }
+  function bodybg4(){
+    document.body.style.backgroundColor="green";
+  }
+  function bodybg5(){
+    document.body.style.backgroundColor="yellow";
+  }
+  function bodybg6(){
+    document.body.style.backgroundColor="orange";
+  }
+  function bodybg7(){
+   document.body.style.backgroundColor="red";
+  }
+  function bodybg8(){
+   document.body.style.backgroundColor="white";
+  }
+  function bodybg9() {
+    document.body.style.backgroundColor = "black";
+  }
+  document.getElementById('morebodycolor').oninput = function() {
+    const bodycolor = 'y'.replace('y', this.value);
+    document.getElementById('body').style.backgroundColor = bodycolor;
+  }
+  const btn = document.getElementById('btn');
+  
+  btn.addEventListener('click', () => {
+    const box = document.getElementById('colors');
+    
+      box.style.opacity = "100";
+      box.style.display="block";
+      box.style.transform = 'translate(0px,-15px)';
+document.getElementById('btn').style.width= "200px";
+document.getElementById('btn2').style.display = "none";
+document.getElementById('btn3').style.display = "none";
+document.getElementById('btn4').style.display = "none";
+document.getElementById('btn5').style.display = "none";
+document.getElementById('btn6').style.display = "none";
+document.getElementById('btnback').style.display = "block";
+  });
+</script>
+<!--script for text colors-->
+<script>
+  function textbg1() {
+    document.getElementById("para").style.color = "violet";
+  }
+  function textbg2() {
+    document.getElementById("para").style.color = "indigo";
+  }
+  function textbg3() {
+    document.getElementById("para").style.color = "blue";
+  }
+  function textbg4() {
+    document.getElementById("para").style.color = "green";
+  }
+  function textbg5() {
+    document.getElementById("para").style.color = "yellow";
+  }
+  function textbg6() {
+    document.getElementById("para").style.color = "orange";
+  }
+  function textbg7() {
+    document.getElementById("para").style.color = "red";
+  }
+  function textbg8() {
+    document.getElementById("para").style.color = "white";
+  }
+  function textbg9() {
+    document.getElementById("para").style.color = "black";
+  }
+  document.getElementById('moretextcolor').oninput = function() {
+    const textcolor = 'x'.replace('x', this.value);
+    document.getElementById('para').style.color = textcolor;
+  }
+  
+  const btn2 = document.getElementById('btn2');
+  btn2.addEventListener('click', () => {
+    // 👇️ hide button
+    //  btn.style.display = 'none';
+  
+    // 👇️ show div
+    const box2 = document.getElementById('colors1');
+      box2.style.opacity = "100";
+       box2.style.display= "block";
+      box2.style.transform = 'translate(0px,-15px)';
+      document.getElementById('btn').style.display="none";
+      document.getElementById('btn2').style.width="200px";
+      document.getElementById('btn3').style.display="none";
+      document.getElementById('btn4').style.display="none";
+      document.getElementById('btn5').style.display="none";
+      document.getElementById('btn6').style.display="none";
+      document.getElementById('btnback').style.display = "block";
+
+  });
+
+</script>
+<!--script for Heading colors-->
+<script>
+  function headbg1() {
+    document.getElementById("headings").style.color = "violet";
+  }
+  function headbg2() {
+    document.getElementById("headings").style.color = "indigo";
+  }
+  function headbg3() {
+    document.getElementById("headings").style.color = "blue";
+  }
+  function headbg4() {
+    document.getElementById("headings").style.color = "green";
+  }
+  function headbg5() {
+    document.getElementById("headings").style.color = "yellow";
+  }
+  function headbg6() {
+    document.getElementById("headings").style.color = "orange";
+  }
+  function headbg7() {
+    document.getElementById("headings").style.color = "red";
+  }
+  function headbg8() {
+    document.getElementById("headings").style.color = "white";
+  }
+  function headbg9() {
+    document.getElementById("headings").style.color = "black";
+  }
+  document.getElementById('moreheadcolor').oninput = function() {
+    const headcolor = 'x'.replace('x', this.value);
+    document.getElementById('headings').style.color = headcolor;
+  }
+  
+  const btn3 = document.getElementById('btn3');
+  btn3.addEventListener('click', () => {
+    // 👇️ hide button
+    //  btn.style.display = 'none';
+  
+    // 👇️ show div
+    const box3= document.getElementById('colors2');
+box3.style.opacity = "100";
+box3.style.display="block";
+box3.style.transform = 'translate(0px,-15px)';
+document.getElementById('btn').style.display="none";
+document.getElementById('btn3').style.width="200px";
+document.getElementById('btn2').style.display="none";
+document.getElementById('btn4').style.display="none";
+document.getElementById('btn5').style.display="none";
+document.getElementById('btn6').style.display="none";
+document.getElementById('btnback').style.display = "block";
+
+  });
+
+</script>
+<!--script for font size-->
+<script>
+  function textsize12(){
+    var a1 = document.getElementById("num").value;
+   //document.write(a);
+   var b1=a1+"px";
+    var d="";
+    if (a1 < 16  && a1 != d){
+    document.getElementById("para").style.fontSize=b1;
+    document.getElementById("num").value="";
+    document.getElementById("txtsizedisplay").innerText="present the size of the text is "+b1;
+    }
+    else{
+      window.alert("sorry please enter below 15");
+     document.getElementById("num").value="";
+    }
+  }
+  
+ const btn4= document.getElementById('btn4');
+  btn4.addEventListener('click', () => {
+    // 👇️ hide button
+    //  btn.style.display = 'none';
+  
+    // 👇️ show div
+    const box4= document.getElementById('size');
+      box4.style.display = "block";
+      box4.style.opacity = "100";
+      box4.style.transform = 'translate(0px,-5px)';
+document.getElementById('btn').style.display="none";
+document.getElementById('btn2').style.display="none";
+document.getElementById('btn3').style.display="none";
+document.getElementById('btn4').style.width="200px";
+document.getElementById('btn5').style.display="none";
+document.getElementById('btn6').style.display="none";
+document.getElementById('btnback').style.display = "block";
+      
+  });
+</script>
+<!--script for head size-->
+<script>
+const btn5 = document.getElementById('btn5');
+btn5.addEventListener('click', () => {
+  document.getElementById('hsize').style.opacity= "100";
+  document.getElementById('hsize').style.display= "block";
+  document.getElementById('hsize').style.transform = 'translate(9px,-7px)';
+  document.getElementById('btn').style.display = "none";
+  document.getElementById('btn2').style.display = "none";
+  document.getElementById('btn3').style.display = "none";
+   document.getElementById('btn4').style.display= "none";
+  document.getElementById('btn5').style.width = "200px";
+  document.getElementById('btn6').style.display = "none";
+  document.getElementById('btnback').style.display = "block";
+});
+ function textsize1(x) {
+   var a = document.getElementById("num").value;
+   var b = x+ "mm";
+document.getElementById("headings").style.fontSize = b;
+  document.getElementById("hsize").style.transform="translate(10px,-5px)";
+  }
+  
+</script>
+<!--script for font thickness-->
+<script>
+  function fontweight1(y) {
+   var b = y+"px";
+  // alert(b);
+document.getElementById("para").style.fontWeight = y;
+  document.getElementById("hsize").style.transform="translate(10px,-5px)";
+  }
+  function fontweight2(){
+    document.getElementById('para').style.fontWeight="bold";
+  }
+  const btn6 = document.getElementById('btn6');
+btn6.addEventListener('click', () => {
+  document.getElementById('fweight').style.opacity= "100";
+  document.getElementById('fweight').style.display= "block";
+  document.getElementById('fweight').style.transform = 'translate(9px,-7px)';
+  document.getElementById('btn').style.display = "none";
+  document.getElementById('btn2').style.display = "none";
+  document.getElementById('btn3').style.display = "none";
+   document.getElementById('btn4').style.display= "none";
+  document.getElementById('btn5').style.width = "200px";
+  document.getElementById('btn6').style.display = "none";
+  document.getElementById('btnback').style.display = "block";
+});
+</script>
+<!--script for back-->
+<script>
+
+  const btnback = document.getElementById('btnback');
+  
+  btnback.addEventListener('click', () => {
+
+   btnback.style.display="none";
+   
+ var a=document.getElementById('btn').style;
+ var b=document.getElementById('btn2').style;
+ var c=document.getElementById('btn3').style;
+ var d=document.getElementById('btn4').style;
+ var e=document.getElementById('btn5').style;
+ var f=document.getElementById('btn6').style;
+ var colors=document.getElementById('colors');
+ var colors1=document.getElementById('colors1');
+ var colors2=document.getElementById('colors2');
+ var alltextsize=document.getElementById('size');
+ var allheadsize=document.getElementById('hsize');
+ var allfontweights=document.getElementById('fweight');
+ 
+     a.width = "120px";
+     b.width = "120px";
+     c.width = "120px";
+     d.width = "120px";
+     e.width = "120px";
+     f.width = "120px";
+     
+     
+     a.display = "block";
+     b.display = "block";
+     c.display = "block";
+     d.display = "block";
+     e.display = "block";
+     f.display = "block";
+     
+  colors.style.opacity="0";
+  colors1.style.opacity="0";
+  colors2.style.opacity="0";
+  alltextsize.style.opacity="0";
+  allheadsize.style.opacity="0";
+  allfontweights.style.opacity="0";
+  
+  
+  
+colors.style.transform = 'translate(-150px,-15px)';
+colors1.style.transform = 'translate(-150px,-15px)';
+colors2.style.transform = 'translate(-150px,-15px)';
+alltextsize.style.transform = 'translate(-15px,-5px)';
+allheadsize.style.transform = 'translate(-150px,-7px)';
+allfontweights.style.transform = 'translate(-150px,-7px)';
+
+  colors.style.display="none";
+  colors1.style.display="none";
+  colors2.style.display="none";
+  alltextsize.style.display="none";
+  allheadsize.style.display="none";
+  allfontweights.style.display="none";
+  
+    });
+</script>
+</body>
+
+</html>
